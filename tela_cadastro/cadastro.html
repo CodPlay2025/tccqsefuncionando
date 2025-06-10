@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Codplay 360°</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <!-- logo -->
+    <img src="../Imagens/imgLogo.png" alt="Logo" class="logo">
+
+     <!-- botão de voltar -->
+     <div class="voltar">
+        <a href="../tela_login/index.html"> 
+            <img src="../Imagens/imgVoltar.png" >  
+        </a>
+    </div>
+
+    <div class="cadastro-box">
+        <img src="../Imagens/imgPensativo.png" alt="Astronauta" class="astronaut-icon">
+
+        <h2>CADASTRO</h2>
+        <form id="formCadastro">
+            <!-- inserção de usuário -->
+            <div class="input-group">
+              <input type="text" name="user" placeholder="Usuário" required />
+              <span class="icon">&#128100;</span>
+            </div>
+          
+            <!-- inserção de senha -->
+            <div class="input-group">
+              <input type="password" name="senha" placeholder="Senha" required />
+              <span class="icon">&#128274;</span>
+            </div>
+          
+            <!-- Cadastrar -->
+            <button type="button" class="fim-cadastro-button">Cadastrar</button>
+          </form>
+    </div>
+    </div>  
+    <script src="../JavaScript/conexoes_buttons.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<script> 
+    const params = new URLSearchParams(window.location.search); 
+    const id = params.get('id'); 
+    if (id) { 
+        localStorage.setItem('quizPersonalizadoId', id); 
+        localStorage.setItem('modoPersonalizado', 'true'); 
+        window.location.href = 'index.html'; 
+    } else { 
+        alert("Quiz inválido."); 
+        window.location.href = '../quiz_comunidade/comunidade.html'; 
+    } 
+</script>

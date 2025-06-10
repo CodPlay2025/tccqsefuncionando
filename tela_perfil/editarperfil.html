@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="editarperfil.css">
+</head>
+<body>
+    
+    <!-- logo -->
+    <img src="../Imagens/imgLogo.png" alt="Logo" class="logo">
+
+    <div class="container">
+        <h1>EDITE SEU AVATAR</h1>
+
+        <!-- botão de voltar -->
+        <div class="voltar">
+            <a href="../tela_menu/menu.html"> 
+                <img src="../Imagens/imgVoltar.png">
+            </a>
+        </div>
+
+        <!-- avatar atual -->
+        <div class="profile-section">
+            <div class="avatar-preview">
+                <img src="" alt="Avatar Atual">
+            </div>
+
+            <!-- editar apelido -->
+            <div class="info">
+                
+                <!-- editar avatar -->
+                <div class="avatars">
+                    <img src="../Imagens/icone1.png" alt="Avatar 1">
+                    <img src="../Imagens/icone2.png" alt="Avatar 2">
+                    <img src="../Imagens/icone3.png" alt="Avatar 3">
+                    <img src="../Imagens/icone4.png" alt="Avatar 4">
+                </div>
+
+                <div class="avatars2">   
+                    <img src="../Imagens/icone5.png" alt="Avatar 5">
+                    <img src="../Imagens/icone6.png" alt="Avatar 6">
+                    <img src="../Imagens/icone7.png" alt="Avatar 7">
+                    <img src="../Imagens/icone8.png" alt="Avatar 8">
+                </div>
+
+                <button id="salvar">salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para trocar avatar -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const avatarImages = document.querySelectorAll('.avatars img, .avatars2 img');
+            const avatarPreview = document.querySelector('.avatar-preview img');
+            const salvarBtn = document.getElementById('salvar');
+            let selectedAvatarSrc = avatarPreview.getAttribute('src');
+
+            avatarImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    selectedAvatarSrc = img.getAttribute('src');
+                    avatarPreview.setAttribute('src', selectedAvatarSrc);
+                    console.log('Imagem alterada para:', selectedAvatarSrc);
+                });
+            });
+
+            salvarBtn.addEventListener('click', () => {
+                localStorage.setItem('avatarSelecionado', selectedAvatarSrc);
+                console.log('Avatar salvo:', selectedAvatarSrc);
+                alert('Avatar salvo com sucesso!');
+            });
+
+            const savedAvatar = localStorage.getItem('avatarSelecionado');
+            if (savedAvatar) {
+                avatarPreview.setAttribute('src', savedAvatar);
+                selectedAvatarSrc = savedAvatar;
+                console.log('Avatar carregado:', savedAvatar);
+            }
+        });
+    </script>
+
+</body>
+</html>

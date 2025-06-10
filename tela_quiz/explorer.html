@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSO QUIZ</title>
+    <link rel="stylesheet" href="explorer.css">
+</head>
+<body>
+    <!-- logo -->
+    <img src="../Imagens/imgLogo.png" alt="Logo" class="logo">
+
+     <!-- botão de voltar -->
+     <div class="voltar">
+        <a href="../tela_menu/menu.html">
+             <img src="../Imagens/imgVoltar.png" ></a>
+    </div>
+
+     <!-- Usuário-->
+    <div class="profile">
+        <span id="nome-usuario-menu">Usuário</span>
+        <img id="avatar-menu" src="../Imagens/icone1.png" alt="Avatar do Menu">
+    </div>
+
+    <div class="universo">
+        <H1> 
+        UNIVERSO DO QUIZ
+        </H1>
+    </div>
+
+    <div class="container">
+
+        <h2>NOSSO QUIZ:<br></h2>
+
+                <!-- QUIZ -->
+                <div class="tela" id="quiz-card">
+                    <img src="../Imagens/imgQuiz.png" alt="Quiz Programação">
+                    <p>QUIZ CodPlay 360°</p>
+                </div>
+            
+    </div>
+
+    <div class="container">
+
+        <h2>Explore pelo universo do Quiz:<br></h2>
+
+            <div class="explore">
+                <div class="tela" id="explorer-card">
+                    <img src="../Imagens/imgExplorar.png" alt="explorer">
+                    <p>EXPLORAR</p>
+                </div>
+
+                <div class="tela" id="criar-card">
+                    <a href="../quiz_criação/criação.html"><img src="../Imagens/imgCriacao.png" ></a>
+                    <p>CRIAÇÃO</p>
+                </div>
+            </div>
+            
+    </div>
+
+    <script src="../JavaScript/conexoes_buttons.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const avatarMenu = document.getElementById('avatar-menu');
+            const avatarSalvo = localStorage.getItem('avatarSelecionado');
+            if (avatarMenu && avatarSalvo) {
+                avatarMenu.setAttribute('src', avatarSalvo);
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const avatarMenu = document.getElementById('avatar-menu');
+            const avatarSalvo = localStorage.getItem('avatarSelecionado');
+            if (avatarMenu && avatarSalvo) {
+                avatarMenu.setAttribute('src', avatarSalvo);
+            }
+
+    // Nome do usuário
+            const nomeUsuario = localStorage.getItem('nomeUsuario');
+            const nomeElemento = document.getElementById('nome-usuario-menu');
+            if (nomeUsuario && nomeElemento) {
+                nomeElemento.textContent = nomeUsuario;
+            }
+        });
+</script>
+
+
+
+<script>
+    document.getElementById("explorer-card").addEventListener("click", function() {
+        window.location.href = "../quiz_comunidade/comunidade.html";
+    });
+</script>
+
+
+
+
+</body>
+</html>

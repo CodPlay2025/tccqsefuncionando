@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade</title>
+    <link rel="stylesheet" href="comunidade.css ">
+</head>
+<body>
+    
+    <!-- logo -->
+    <img src="../Imagens/imgLogo.png" alt="Logo" class="logo" id="logo-btn">
+
+    <!-- botão de voltar -->
+    <div class="voltar">
+        <a href="../tela_quiz/explorer.html">
+             <img src="../Imagens/imgVoltar.png" ></a>
+    </div>
+
+    <div class="container">
+        <h1>EXPLORE OS QUIZZES DA COMUNIDADE:</span></h1>
+
+        <!-- Usuário-->
+        <div class="profile">
+            <span id="nome-usuario-menu">Usuário</span>
+            <img id="avatar-menu" src="../Imagens/icone1.png" alt="Avatar do Menu">
+        </div>
+
+        
+        <div class="jogos">
+
+            <!-- QUIZZES -->
+            <div class="tela" onclick="window.location.href='../jogo_quiz/quiz_otavio/quiz_otavio.html'">
+                <img src="../Imagens/imgQuizOtavio.png" alt="Quiz sobre F1">
+                <p>QUIZ DE FÓRMULA 1<br> <span>CRIADOR: Otavio</span></p>
+                <span>DIFICULDADE: Difícil</span>
+            </div>
+
+            <div class="tela" id="quiz-nauan">
+                <img src="../Imagens/imgJob.png" alt="Quiz Job">
+                <p>QUIZ DO  LTDA <br> <span>CRIADOR: Nauan</span></p>
+                <span>DIFICULDADE: Difícil</span>
+            </div>
+            
+            <div class="tela" id="quiz-mauro">
+                <img src="../Imagens/imgArma.png" alt="Quiz USD">
+                <p>QUIZ DOS D <br> <span>CRIADOR: Mauro</span></p>
+                <span>DIFICULDADE: Moderada</span>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <div class="container2">
+        <div class="jogos">
+
+            <!-- QUIZZES -->
+            <div class="tela" onclick="window.location.href='../jogo_quiz/quiz_gustavo/quiz_gustavo.html'">
+                <img src="../Imagens/imgBackgroundGustavo.png" alt="Quiz sobre linguagens de progamação">
+                <p>QUIZ DE LINGUAGENS DE PROGAMAÇÃO<br> <span>CRIADOR: Gustavo</span></p>
+                <span>DIFICULDADE: Difícil</span>
+            </div>
+
+            <div class="tela" onclick="window.location.href='../jogo_quiz/quiz_igor/quiz_igor.html'">
+                <img src="../Imagens/imgQuizIgor.png" alt="Quiz sobre Java">
+                <p>QUIZ SOBRE JAVASCRIPT<br> <span>CRIADOR: Igor</span></p>
+                <span>DIFICULDADE: Moderada</span>
+            </div>
+            
+            <div class="tela" onclick="window.location.href='../jogo_quiz/quiz_victor/quiz_victor.html'">
+                <img src="../Imagens/imgBackgroundVictor.png" alt="Quiz sobre Java">
+                <p>QUIZ SOBRE FUTEBOL<br> <span>CRIADOR: Victor</span></p>
+                <span>DIFICULDADE: Moderada</span>
+            </div>
+
+        </div>
+        
+    </div>
+    
+
+    <div class="container3"> 
+        <h2>Quizzes criados pela comunidade:</h2> 
+        <div class="jogos" id="comunidade-dinamica">
+            
+        </div> 
+    </div>
+    
+
+    <script src="../JavaScript/conexoes_buttons.js"></script>
+    <script> window.addEventListener('DOMContentLoaded', async () => { 
+        const avatarMenu = document.getElementById('avatar-menu'); 
+        const avatarSalvo = localStorage.getItem('avatarSelecionado'); 
+        if (avatarMenu && avatarSalvo) { 
+            avatarMenu.setAttribute('src', avatarSalvo); 
+        } 
+        const nome = localStorage.getItem("nomeUsuario"); 
+        const nomeSpan = document.getElementById("nome-usuario-menu"); 
+        if (nome && nomeSpan) { 
+            nomeSpan.textContent = nome; 
+        } 
+        const container = document.getElementById('comunidade-dinamica'); 
+        try { 
+            const res = await fetch('http://localhost:3000/quizzes'); 
+            const quizzes = await res.json(); quizzes.forEach((quiz) => { 
+                const div = document.createElement('div'); 
+                div.className = 'tela'; 
+                div.innerHTML = ` <img src="../Imagens/pp.png" alt="Quiz da Comunidade"> <p>${quiz.nome_quiz}<br><span>CRIADOR: ${quiz.criador}</span></p> <span>DIFICULDADE: -</span> `; 
+                div.addEventListener('click', () => { 
+                    window.location.href = '../jogo_quiz/index.html?quiz_id=' + quiz.quiz_id; 
+                }); 
+                container.appendChild(div); 
+            }); 
+        } 
+        catch (err) { 
+            console.error('Erro ao carregar quizzes da comunidade:', err); 
+        } 
+    }); 
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Quiz</title>
+  <link rel="stylesheet" href="criação.css" />
+</head>
+<body>
+
+<!-- logo -->
+<img src="../Imagens/imgLogo.png" alt="Logo" class="logo" id="logo-btn">  
+
+ <!-- botão de voltar -->
+  <div class="voltar">
+    <a href="../tela_quiz/explorer.html"> 
+    <img src="../Imagens/imgVoltar.png" >
+    </a>
+</div>
+
+  <h1>Criar Quiz - 10 Questões</h1>
+  <form id="quizForm">
+    <!-- Questão 1 (manual para JS clonar) -->
+    <div class="question-block">
+      <label for="q1">Questão 1</label>
+      <input type="text" name="q1" id="q1" placeholder="Digite a pergunta">
+
+      <div class="alternatives">
+        <label>Alternativas (marque a correta):</label>
+
+        <div class="alt">
+          <input type="radio" name="correct1" value="A" required>
+          <input type="text" name="q1a" placeholder="Alternativa A">
+        </div>
+
+        <div class="alt">
+          <input type="radio" name="correct1" value="B">
+          <input type="text" name="q1b" placeholder="Alternativa B">
+        </div>
+
+        <div class="alt">
+          <input type="radio" name="correct1" value="C">
+          <input type="text" name="q1c" placeholder="Alternativa C">
+        </div>
+
+        <div class="alt">
+          <input type="radio" name="correct1" value="D">
+          <input type="text" name="q1d" placeholder="Alternativa D">
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById("quizForm");
+
+    for (let i = 2; i <= 10; i++) {
+      const block = document.createElement("div");
+      block.className = "question-block";
+      block.innerHTML = `
+        <label for="q${i}">Questão ${i}</label>
+        <input type="text" name="q${i}" id="q${i}" placeholder="Digite a pergunta">
+
+        <div class="alternatives">
+          <label>Alternativas (marque a correta):</label>
+
+          <div class="alt">
+            <input type="radio" name="correct${i}" value="A" required>
+            <input type="text" name="q${i}a" placeholder="Alternativa A">
+          </div>
+
+          <div class="alt">
+            <input type="radio" name="correct${i}" value="B">
+            <input type="text" name="q${i}b" placeholder="Alternativa B">
+          </div>
+
+          <div class="alt">
+            <input type="radio" name="correct${i}" value="C">
+            <input type="text" name="q${i}c" placeholder="Alternativa C">
+          </div>
+
+          <div class="alt">
+            <input type="radio" name="correct${i}" value="D">
+            <input type="text" name="q${i}d" placeholder="Alternativa D">
+          </div>
+        </div>
+      `;
+      form.appendChild(block);
+    }
+
+    // Botão de envio
+    const submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.textContent = "Enviar Quiz";
+    form.appendChild(submitButton);
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const perguntas = [];
+
+      for (let i = 1; i <= 10; i++) {
+        const pergunta = document.querySelector(`input[name="q${i}"]`)?.value.trim();
+        const alternativaA = document.querySelector(`input[name="q${i}a"]`)?.value.trim();
+        const alternativaB = document.querySelector(`input[name="q${i}b"]`)?.value.trim();
+        const alternativaC = document.querySelector(`input[name="q${i}c"]`)?.value.trim();
+        const alternativaD = document.querySelector(`input[name="q${i}d"]`)?.value.trim();
+        const correta = document.querySelector(`input[name="correct${i}"]:checked`)?.value;
+
+        if (!pergunta || !alternativaA || !alternativaB || !alternativaC || !alternativaD || !correta) {
+          alert(`Preencha todos os campos da questão ${i}.`);
+          return;
+        }
+
+        perguntas.push({
+          pergunta,
+          alternativa_a: alternativaA,
+          alternativa_b: alternativaB,
+          alternativa_c: alternativaC,
+          alternativa_d: alternativaD,
+          correta
+        });
+      }
+
+      const nomeQuiz = prompt("Digite o nome do seu quiz:");
+      const criador = localStorage.getItem("nomeUsuario");
+
+        if (!criador) {
+          alert("Você precisa estar logado para criar um quiz.");
+          return;
+        }
+
+        try {
+        const res = await fetch("http://localhost:3000/quiz", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nomeQuiz, criador, perguntas })
+        });
+        const result = await res.json();
+        if (result.success) {
+          alert("Quiz salvo com sucesso!");
+          window.location.href = "../quiz_comunidade/comunidade.html";
+        } else {
+          alert("Erro ao salvar quiz.");
+        }
+        } catch (err) {
+          console.error(err);
+          alert("Erro de conexão com o servidor.");
+        }
+      }); 
+
+  </script>
+
+</body>
+</html>

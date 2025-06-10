@@ -1,0 +1,152 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Fundo e fonte geral */
+  body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: url('../Imagens/imgBackground.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  /* Telas centrais */
+  .screen {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  input, select, button {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  /* Resultado layout com ranking ao lado */
+  .result-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .result-left {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .result-right {
+    flex: 1;
+    min-width: 250px;
+    
+  }
+  
+  .ranking-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 200px;
+  }
+  
+  .ranking-box h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .ranking-box h4 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .ranking-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .ranking-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 0;
+  }
+  
+  /* Animação de entrada */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    width: 200px; /* Ajuste conforme necessário */
+}
+
+.voltar{ 
+    position: absolute;
+    top: 50px; /* Ajuste para alinhar com o título */
+    left: 10px;
+    display:inline-flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.voltar:hover {
+    transform: scale(1.05);
+    transition: background 0.3s ease, transform 0.3s, box-shadow 0.3s;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 span {
+  font-size: 36px;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  
+  
+  

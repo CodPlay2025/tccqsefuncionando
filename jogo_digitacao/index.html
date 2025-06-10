@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Digitação</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="voltar">
+    <a href="../tela_menu/menu.html">
+      <img src="../Imagens/imgVoltar.png" alt="Voltar">
+    </a>
+  </div>
+
+  <!-- Tela inicial -->
+  <div id="start-screen" class="screen">
+    <h1>Desafio de Digitação</h1>
+    <p>Preparado para começar seu desafio?</p>
+    <button class="buttoncss" onclick="startGame()">Iniciar</button>
+  </div>
+
+  <!-- Tela do jogo -->
+  <div id="game-screen" class="screen hidden">
+    <h1>Desafio de Digitação</h1>
+    <div id="timer">Tempo: 30s</div>
+    <div id="timer-bar">
+      <div id="time-fill"></div>
+    </div>
+    <div id="word-display">Palavra</div>
+    <input type="text" id="word-input" placeholder="Digite aqui..." autocomplete="off"/>
+    <p id="score">Pontuação: 0</p>
+    <button class="buttoncss" id="stop-button" onclick="stopDigitacao()">Parar Jogo</button>
+  </div>
+
+  <!-- Tela de resultado -->
+  <div id="result-screen" class="screen hidden">
+    <h2>Fim de jogo!</h2>
+    <p id="final-score">Sua pontuação foi: 0</p>
+    <div class="result-buttons">
+      <button class="buttoncss" onclick="startGame()">Jogar Novamente</button>
+      <button class="buttoncss" onclick="goToMenu()">Menu Principal</button>
+    </div>
+  </div>
+
+</body>
+</html>

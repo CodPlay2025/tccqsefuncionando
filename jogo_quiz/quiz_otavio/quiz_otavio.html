@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz do Otavio</title>
+  <link rel="stylesheet" href="otavio.css" />
+  <script src="quiz_otavio.js" defer></script>
+</head>
+<body>
+
+      <!-- botão de voltar -->
+      <div class="voltar">
+        <a href="../../quiz_comunidade/comunidade.html">
+             <img src="imgVoltarOtavio.png" ></a>
+    </div>
+
+  <!-- Tela inicial onde o jogador clica para iniciar -->
+  <div id="name-screen">
+    <h1>Quiz do Otavio </h1>
+    <h2>Tema: Fórmula 1</h2>
+    <p><br>Está preparado para entrar no mundo do automobilismo? <br/></p>
+    <button onclick="startQuiz()">Iniciar</button>
+  </div>
+
+  <!-- Container do quiz com pergunta, opções e timer -->
+  <div id="quiz-container" class="hidden">
+    <div id="question-counter" class="question-counter"></div>
+    <div id="question">Pergunta aparece aqui</div>
+    <img id="question-image" class="question-image hidden" src="" alt="Imagem da pergunta" />
+    <p id="feedback" class="hidden"></p>
+    <div id="options" class="options"></div>
+    <div id="timer">Tempo: 15s</div>
+    <div id="timer-bar"><div id="time-fill"></div></div>
+  </div>
+
+  <!-- Tela de resultado final com ranking -->
+  <div id="result-screen" class="hidden result-container">
+    <div class="result-left">
+      <h2>Resultado</h2>
+      <p id="final-score"></p>
+      <div class="result-buttons">
+        <button onclick="restartQuiz()">Jogar Novamente</button>
+        <button onclick="goToMenu()">Menu Principal</button>
+      </div>
+    </div>
+    <div class="result-right ranking-box">
+      <h3>Ranking</h3>
+      <ul id="ranking-list" class="ranking-list"></ul>
+    </div>
+  </div>
+</body>
+</html>

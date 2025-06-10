@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Codplay 360°</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- logo -->
+    <img src="../Imagens/imgLogo.png" alt="Logo" class="logo">
+
+     <!-- botão de voltar -->
+     <div class="voltar">
+        <a href="../tela_Start/index.html"> 
+            <img src="../Imagens/imgVoltar.png" >
+        </a>
+        </div>
+
+    <div class="login-container">
+        <div class="login-box">
+        <img src="../Imagens/imgPensativo.png" alt="Astronauta" class="astronaut-icon">
+            
+            <h2>LOGIN</h2>
+            <form id="loginform" action="#">
+
+                <!-- inserção de usuário -->
+                <div class="input-group">
+                    <input class="nomeUsuario" type="text" name="user" placeholder="Usuário">
+                    <span class="icon">&#128100;</span>
+                </div>
+
+                <!-- inserção de senha -->
+                <div class="input-group">
+                    <input type="password" name="senha" placeholder="Senha">
+                    <span class="icon">&#128274;</span>
+                </div>
+
+                <!-- Entrar -->
+                <button type="submit" name="login-button" class="login-button">Entrar</button>
+
+                <!-- Cadastrar -->
+                <button type="button" class="cadastro-button">Cadastre-se</button>
+
+
+            </form> 
+        </div>
+    </div>
+    <script src="../JavaScript/conexoes_buttons.js"></script>
+</body>
+</html>

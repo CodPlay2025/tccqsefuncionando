@@ -1,0 +1,115 @@
+body {
+    background: url('../Imagens/imgBackground.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    width: 200px; /* Ajuste conforme necessário */
+}
+
+.voltar{ 
+    position: absolute;
+    top: 50px; /* Ajuste para alinhar com o título */
+    left: 10px;
+    display:inline-flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.voltar:hover {
+    transform: scale(1.05);
+    transition: background 0.3s ease, transform 0.3s, box-shadow 0.3s;
+}
+
+.container {
+
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-family: cursive;
+
+}
+
+.container p { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:x-large;
+    font-family: cursive;
+}
+
+.container h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-family: cursive;
+    margin-top: 50px;
+}
+
+.container h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-family: cursive;
+}
+
+.container h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:x-large;
+    font-family: cursive;
+}
+
+/* CONTEUDOS DOS JOGOS */
+.conteudos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.tela {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10%;
+}
+
+.tela img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.tela p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tela:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.img {
+    clip-path: circle(60%);
+}
+
+.qrcode {
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+    }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz do Igor</title>
+  <link rel="stylesheet" href="gustavo.css" />
+  <script src="quiz_gustavo.js" defer></script>
+</head>
+<body>
+
+      
+
+  <!-- Tela inicial onde o jogador clica para iniciar -->
+  <div id="name-screen">
+    <!-- botão de voltar -->
+    <div class="voltar">
+      <a href="../../quiz_comunidade/comunidade.html">
+           <img src="../../Imagens/imgVoltar.png" ></a>
+    </div>
+    <h1>Quiz do Gustavo</h1>
+    <p>Clique no botão para iniciar</p>
+    <button  class="buttoncss" onclick="startQuiz()">Iniciar</button>
+  </div>
+
+  <!-- Container do quiz com pergunta, opções e timer -->
+  <div id="quiz-container" class="hidden">
+    <div id="question-counter" class="question-counter"></div>
+    <div id="question">Pergunta aparece aqui</div>
+    <p id="feedback" class="hidden"></p>
+    <div id="options" class="options"></div>
+    <div id="timer">Tempo: 15s</div>
+    <div id="timer-bar"><div id="time-fill"></div></div>
+    <button id="stop-button" onclick="stopQuiz()">Parar Jogo</button>
+  </div>
+
+  <!-- Tela de resultado final com ranking -->
+  <div id="result-screen" class="hidden result-container">
+    <div class="result-left">
+      <h2>Resultado</h2>
+      <p id="final-score"></p>
+      <div class="result-buttons">
+        <button  class="buttoncss" onclick="restartQuiz()">Jogar Novamente</button>
+        <button  class="buttoncss" onclick="goToMenu()">Menu Principal</button>
+      </div>
+    </div> 
+  </div>
+</body>
+</html>

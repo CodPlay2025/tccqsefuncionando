@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Escolha a Dificuldade</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+ </head>
+ <body>
+
+  <!-- botão de voltar -->
+  <div class="voltar">
+    <a href="../tela_quiz/explorer.html">
+         <img src="../Imagens/imgVoltar.png" ></a>
+</div>
+   <!-- Tela de escolha de dificuldade -->
+   <div class="dificuldade-container">
+     <h1 class="titulo-dificuldade">Escolha sua dificuldade</h1>
+     <div class="dificuldade-opcoes">
+      <div class="dificuldade-card" onclick="selectLevel('easy')">Fácil</div>
+       <div class="dificuldade-card" onclick="selectLevel('medium')">Médio</div>
+       <div class="dificuldade-card" onclick="selectLevel('hard')">Difícil</div>
+     </div>
+   </div>
+ </body>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Inicial</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+   <!-- logo -->
+   <img src="../Imagens/imgLogo.png" alt="Logo" class="logo" id="logo-btn">
+
+   <!-- MENU HAMBURGUER -->
+   <div class="hamburger-menu" id="hamburger-menu">
+       <span class="close-btn" id="close-btn">&times;</span>
+       <ul>
+           <li><a href="../tela_perfil/editarperfil.html">Editar Avatar</a></li>
+           <li><a href="../tela_sobreNos/sobrenos.html">Sobre-Nós</a></li>
+           <li><a href="../tela_Start/index.html">Sair</a></li>
+           
+       </ul>
+   </div>
+
+   <div class="container">
+       <h1>Bem vindo ao <br> <span>CODPLAY 360°</span></h1>
+
+       <!-- Usuário-->
+       <div class="profile">
+            <span id="nome-usuario-menu">Usuário</span>
+            <img id="avatar-menu" src="../Imagens/icone1.png" alt="Avatar do Menu">
+        </div>
+
+       
+       <div class="jogos">
+           <!-- QUIZ -->
+           <div class="tela" id="quiz">
+               <img src="../Imagens/imgUniversoQuiz.png" alt="Quiz Programação">
+               <p>UNIVERSO QUIZ</p>
+           </div>
+
+            <!-- QUIZ -->
+            <div class="tela" id="digitacao">
+               <img src="../Imagens/imgDigitacao.png" alt="digitacao">
+               <p>UNIVERSO DIGITAÇÃO</p>
+           </div>
+           
+
+       </div>
+   </div>
+
+    <script src="../JavaScript/conexoes_buttons.js"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const avatarMenu = document.getElementById('avatar-menu');
+        const avatarSalvo = localStorage.getItem('avatarSelecionado');
+        if (avatarMenu && avatarSalvo) {
+            avatarMenu.setAttribute('src', avatarSalvo);
+        }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const avatarMenu = document.getElementById('avatar-menu');
+        const avatarSalvo = localStorage.getItem('avatarSelecionado');
+        if (avatarMenu && avatarSalvo) {
+            avatarMenu.setAttribute('src', avatarSalvo);
+        }
+
+    // Nome do usuário
+        const nomeUsuario = localStorage.getItem('nomeUsuario');
+        const nomeElemento = document.getElementById('nome-usuario-menu');
+        if (nomeUsuario && nomeElemento) {
+            nomeElemento.textContent = nomeUsuario;
+        }
+    });
+</script>
+
+    
+</body>
+</html>
