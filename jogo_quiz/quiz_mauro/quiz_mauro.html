@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quiz do Mauro</title>
+<link rel="stylesheet" href="mauro.css" />
+<script src="quiz_mauro.js" defer></script>
+</head>
+<body>
+
+<!-- Tela inicial -->
+<div id="name-screen" class="screen">
+<!-- Botão de voltar -->
+<div class="voltar">
+    <a href="../../quiz_comunidade/comunidade.html">
+    <img src="../../Imagens/imgVoltar.png" alt="Voltar">
+    </a>
+    </div>    
+<img src="../../Imagens/mauro_ico_vava.svg" alt="Bola de Futebol" class="bola-topo" />
+<h1>Quiz do Mauro</h1>
+<h2>Tema: Valorant</h2>
+<p>Você realmente conhece o Valorant?</p>
+<button onclick="startQuiz()">Iniciar</button>
+</div>
+<!-- Quiz -->
+<div id="quiz-container" class="hidden screen">
+<div id="question-counter" class="question-counter"></div>
+<div id="question">Pergunta aparece aqui</div>
+<p id="feedback" class="hidden"></p>
+<div id="options" class="options"></div>
+<div id="timer">Tempo: 15s</div>
+<div id="timer-bar"><div id="time-fill"></div></div>
+<button id="stop-button" onclick="stopQuiz()">Parar Jogo</button>
+</div>
+<!-- Resultado -->
+<div id="result-screen" class="hidden result-container">
+<div class="result-left">
+<h2>Resultado</h2>
+<p id="final-score"></p>
+<div class="result-buttons">
+<button onclick="restartQuiz()">Jogar Novamente</button>
+<button onclick="goToMenu()">Menu Principal</button>
+</div>
+</div>
+</div>
+</body>
+</html>
